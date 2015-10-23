@@ -1,4 +1,5 @@
 //Cody Kellogg
+//Group project
 //CS 3060-601 Fall 2015
 //Assignment #5
 /* Promise of Originality
