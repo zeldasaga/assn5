@@ -14,7 +14,7 @@ the copy will receive a zero on this assignment.
 #include<stdlib.h>
 #include<sys/wait.h>
 #include<semaphore.h>
-
+#include"assn5.h"
 #define MAX_PROC (100)
 
 			//shared data
@@ -38,7 +38,7 @@ main (int argc, char *argv[])
 
 
   fcfs (count, sub, run);
-//      sjf(count, sub ,run);
+  sjf (count, sub, run);
 //      srtf(count, sub ,run);
 //      rr(count, sub ,run);
 //
