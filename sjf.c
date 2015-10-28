@@ -7,13 +7,29 @@ int clock = 0;
 int proc_left = count;
 int next_proc = 0;
 int ta = 0, wait = 0, resp = 0;
+int i = 0;
 int next_clock;
+int queue[100];
+int time[100];
+//queue[0]= sub[0];
+
+
 
   while (proc_left < count)
     {
 
-      if (sub[next_proc] > clock)
+if (sub[next_proc] > clock)
         clock = sub[next_proc];
+
+while (clock >= sub[i]){
+	queue[i]=sub[i];
+	time[i]=run[i];
+	i++;
+	}
+
+
+ //     if (sub[next_proc] > clock)
+ //       clock = sub[next_proc];
 
       resp += clock - sub[next_proc];
 
@@ -22,8 +38,8 @@ int next_clock;
       wait += next_clock - sub[next_proc] - run[next_proc];
 
       clock = next_clock;
-      next_proc++;
+//      next_proc++;
 }
 
-
+printf ("Avg. Resp.:%.2f, Avg. T.A:%.2f, Avg. Wait:%.2f\n",(float) resp / count, (float) ta / count, (float) wait / count);
 }
